@@ -1,0 +1,114 @@
+:root {
+    --primary-color: rgb(15,15,15);
+    --secondary-color: #eee;
+    --background-color: rgb(15,15,15);
+    --other-text-color: rgb(157 129 240);
+    --text-muted-color: rgb(188,188,188);
+    --text-color-aqua: rgb(114, 199, 227);
+    --text-color-aqua-muted: rgba(114, 199, 227, 0.6);
+
+    --glider-bg-active-not-hovered: rgb(38,38,38);
+    --glider-bg-active-and-hovered: rgb(45,45,45);
+
+    --glider-color: #ffcc00;
+    --transition-speed: 0.1s;
+}
+
+body {
+    font-family: arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/*.home-container {*/
+/*   display: flex;*/
+/*    flex-direction: column;*/
+/*    min-height: 100vh;*/
+/*}*/
+
+.home-header {
+    background-color: var(--background-color);
+    color: var(--other-text-color);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.home-header h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 3.5rem;
+}
+
+.home-header p {
+    color: var(--text-muted-color);
+    font-size : 1.5rem;
+    margin: 0;
+}
+
+.home-nav-tabs {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 400px;
+    margin: 20px auto;
+    padding: 0;
+    background-color: var(--background-color);
+}
+
+.tabs-button {
+    background: none;
+    border: none;
+    color: var(--text-muted-color);
+    font-size: 2rem;
+    padding: 15px 20px;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    transition: color var(--transition-speed) ease-in-out;
+    z-index: 1;
+}
+
+.tab-button:hover{
+    color: var(--glider-color);
+}
+
+.tab-button.active {
+    color: var(--glider-color);
+}
+
+.tab-glider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100% / var(--tab-count));
+    width: 100%;
+    background: var(--glider-bg-active-not-hovered);
+    border-radius: 4px;
+    transform: translateY(var(--glider-transform-y));
+    opacity: var(--glider-opacity);
+    transition: transform var(--transition-speed) ease-out,
+                opacity var(--transition-speed) ease-out,
+                background-color var(--transition-speed) ease-out;
+    z-index: 0;
+}
+
+.tab-glider.glider-is-hovered {
+    background: var(--glider-bg-active-and-hovered);
+}
+
+/*
+text-muted = rgb(188 188 188)
+purple = rgb(167 139 250)
+aqua = rgb(114, 199, 227);
+white text = eee
+
+
+button: rbg(124 58 237)
+hover: 139 92 246
+ */

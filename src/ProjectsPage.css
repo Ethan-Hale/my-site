@@ -1,0 +1,260 @@
+/* It's best practice to put these :root variables in a global CSS file like index.css,
+   but for now, we'll include them here so this component is self-contained. */
+:root {
+    --primary-color: rgb(15,15,15);
+    --secondary-color: #eee;
+    --background-color: rgb(15,15,15);
+    --text-muted-color: rgb(188,188,188);
+    --glider-color: #ffcc00; /* Accent color for titles and links */
+
+    /* New variables for the project cards */
+    --card-background-color: rgb(31, 31, 31); /* Slightly lighter than main bg */
+    --card-border-color: rgba(255, 255, 255, 0.15);
+    --transition-speed: 0.3s;
+
+}
+
+.projects-page {
+    padding: 50px 8%; /* Adjust padding as needed */
+    min-height: 100vh;
+    background-color: var(--background-color);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.technical-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.technical-section-title {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: var(--other-text-color);
+}
+
+.technical-blurb {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-muted-color);
+    max-width: 800px;
+    mergin: 0 auto 30px auto;
+}
+
+.devicons-container i {
+    padding: 10px;
+    font-size: 4rem;
+    color: var(--secondary-color);
+    transition: transform var(--transition-speed) ease-in-out, color var(--transition-speed) ease-in-out;
+}
+
+.devicons-container i:hover {
+    transform: scale(1.2);
+    color: var(--text-color-aqua);
+}
+
+.experience-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.experience-section-title {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 40px;
+    color: var(--other-text-color);
+}
+
+.experience-cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.experience-card {
+    background: var(--card-background-color);
+    border: 1px solid var(--card-border-color);
+    border-radius: 8px;
+    padding: 25px;
+    width: 100%;
+    max-width: 1000px;
+    transition: transform var(--transition-speed) ease-out, box-shadow var(--transition-speed) ease-out;
+}
+
+.experience-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.35);
+}
+
+.experience-card-header {
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--card-border-color);
+    padding-bottom: 15px;
+}
+
+.experience-title {
+    font-size: 1.6rem;
+    color: var(--other-text-color);
+    margin: 0;
+    text-align: left;
+}
+
+.experience-secondary {
+    font-size: 1rem;
+    color: var(--text-muted-color);
+    font-style: oblique;
+    font-weight: lighter;
+    margin: 5px 0;
+    text-align: left;
+}
+
+.experience-date {
+    font-size: 0.9rem;
+    color: var(--text-muted-color);
+    font-style: italic;
+}
+
+.experience-card-body p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-muted-color);
+    margin: 0;
+    text-align: left;
+}
+
+.projects-section, .coursework-section {
+    padding-top: 0;
+    padding-bottom: 50px;
+}
+
+.projects-page-title {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--other-text-color);
+}
+
+/* The grid container for the cards */
+.projects-container {
+    display: grid;
+    /* minmax(450px, 1fr) creates wider cards that are still responsive */
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px; /* Space between cards */
+    margin-bottom: 40px;
+}
+
+/* Styling for each individual project card */
+.project-card {
+    background: var(--card-background-color);
+    border: 1px solid var(--card-border-color);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Stacks header, body, and footer vertically */
+    transition: transform var(--transition-speed) ease-out,
+    box-shadow var(--transition-speed) ease-out;
+}
+
+.project-card:hover {
+    transform: translateY(-8px); /* Lift effect on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35); /* A more prominent shadow */
+}
+
+/* Card Header (for the title) */
+.project-card .card-header h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.6rem;
+    color: var(--other-text-color); /* Use your theme's light text color */
+}
+
+/* Card Body (for the description) */
+.project-card .card-body {
+    flex-grow: 1; /* Allows this section to expand, pushing the footer down */
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-muted-color);
+}
+
+/* Card Footer (for the link) */
+.project-card .card-footer {
+    margin-top: 20px; /* Space above the link */
+    text-align: right; /* Aligns link to the right side of the card */
+}
+
+.project-card .card-footer a {
+    text-decoration: none;
+    color: var(--other-text-color); /* Use your theme's accent color */
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color var(--transition-speed) ease-out;
+}
+
+.project-card .card-footer a:hover {
+    color: var(--secondary-color); /* Color change on hover */
+}
+
+.full-width-section-border{
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50vw);
+    height: 0;
+    border-top: 2px solid var(--card-border-color);
+    margin-bottom: 40px;
+}
+.coursework-section {
+    padding-top: 0;
+    padding-bottom: 50px;
+}
+
+.coursework-section-title {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 40px;
+    color: var(--other-text-color);
+}
+
+.coursework-cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.course-card {
+    display: block;
+    background: var(--card-background-color);
+    border: 1px solid var(--card-border-color);
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 700px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform var(--transition-speed) ease-out,
+                box-shadow var(--transition-speed) ease-out,
+                background-color var(--transition-speed) ease-out;
+}
+
+.course-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    background-color: rgb(45,45,45);
+}
+
+
+.course-card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--other-text-color);
+    margin-bottom: 1px;
+}
+
+.course-card-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted-color);
+}
