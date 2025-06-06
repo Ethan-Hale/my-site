@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './HomePage.css';
+import { Link } from 'react-router-dom';
 
 function HomePage() {
 
@@ -79,14 +80,16 @@ function HomePage() {
                 className = {`tab-glider ${hoveredIndex !== -1 ? 'glider-is-hovered' : ''}`}
             />
             {tabs.map((tab, index) => (
-                <button
+                <Link
                     key = {tab.id}
-                    className = {`tabs-button ${displayIndex === index ? 'active' : ''}`}
+                    //className = {`tabs-button ${displayIndex === index ? 'active' : ''}`}
+                    to = {tab.path}
+                    className = {`tabs-button ${index === activeIndex ? 'active' : ''}`}
                     onMouseEnter = {() => handleTabMouseEnter(index)}
-                    onClick = {() => handleTabClick(index, tab.path)}
+                    //onClick = {() => handleTabClick(index, tab.path)}
                     >
                     {tab.title}
-                </button>
+                </Link>
             ))}
         </nav>
     </>
