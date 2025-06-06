@@ -18,12 +18,12 @@ function HomePage() {
             description: 'lskdjf projects',
             path: '/projects',
         },
-        {
-            id: 'experience',
-            title: 'Experience',
-            description: 'lskdjf experience',
-            path: '/experience',
-        },
+        // {
+        //     id: 'experience',
+        //     title: 'Experience',
+        //     description: 'lskdjf experience',
+        //     path: '/experience',
+        // },
     ];
 
     const [activeIndex, setActiveIndex] = useState(0);
