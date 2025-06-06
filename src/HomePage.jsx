@@ -15,7 +15,7 @@ function HomePage() {
         },
         {
             id: 'projects',
-            title: 'My Projects',
+            title: 'Technical Work',
             description: 'lskdjf projects',
             path: '/projects',
         },
@@ -80,16 +80,16 @@ function HomePage() {
                 className = {`tab-glider ${hoveredIndex !== -1 ? 'glider-is-hovered' : ''}`}
             />
             {tabs.map((tab, index) => (
-                <Link
+                <button
                     key = {tab.id}
-                    //className = {`tabs-button ${displayIndex === index ? 'active' : ''}`}
-                    to = {tab.path}
-                    className = {`tabs-button ${index === activeIndex ? 'active' : ''}`}
+                    className = {`tabs-button ${displayIndex === index ? 'active' : ''}`}
+                    //to = {tab.path}
+                    //className = {`tabs-button ${index === activeIndex ? 'active' : ''}`}
                     onMouseEnter = {() => handleTabMouseEnter(index)}
-                    //onClick = {() => handleTabClick(index, tab.path)}
+                    onClick = {() => handleTabClick(index, tab.path)}
                     >
                     {tab.title}
-                </Link>
+                </button>
             ))}
         </nav>
     </>
